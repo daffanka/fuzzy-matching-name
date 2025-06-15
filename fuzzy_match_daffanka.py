@@ -7,12 +7,13 @@ Original file is located at
     https://colab.research.google.com/drive/1ISGoQRRvp-3abWnX9f8SVCo7j64mZSgN
 """
 
-# --- Instal Package Yang Dibutihkan ---
-!pip install pandas rapidfuzz openpyxl
+# --- Install Package ---
+# !pip install pandas rapidfuzz openpyxl wordninja
 
 import pandas as pd
 import re
 from rapidfuzz import fuzz, process
+import wordninja
 
 # --- CONFIG ---
 excel_file = "fuzzy_match_template.xlsx"
@@ -42,7 +43,11 @@ def clean_name(name):
     name = re.sub(r"[^\w\s]", " ", name)
     name = re.sub(r"\s+", " ", name).strip()
 
-    # Tambahkan nama dalam tanda kurung jika belum ada di string
+    # ⬅️ Add word segmentation for strings with no spaces
+    if " " not in name:
+        name = " ".join(wordninja.split(name))
+
+    # Tambahkan nama dalam tanda kurung jika belum ada
     if paren_name and paren_name.lower() not in name:
         name = paren_name.lower() + " " + name
 
@@ -67,4 +72,3 @@ final_output = df2[["UserName", "Name"]]
 final_output.to_excel(output_file, index=False)
 
 print(f"✅ Matching completed! Output saved to {output_file}")
-
