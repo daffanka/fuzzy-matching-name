@@ -32,7 +32,8 @@ Excel users often struggle when names come from different sources or systems and
 
 You can run everything directly in **Google Colab** — no setup needed on your device.
 
-👉 [**Try it on Google Colab**](https://colab.research.google.com/drive/1ISGoQRRvp-3abWnX9f8SVCo7j64mZSgN?usp=sharing)
+👉 [**Try it on Google Colab 2 Sheet**](https://colab.research.google.com/drive/1ISGoQRRvp-3abWnX9f8SVCo7j64mZSgN?usp=sharing)
+👉 [**Try it on Google Colab 1 Sheet**](https://colab.research.google.com/drive/122sW_8sQO9exSGmPw1vsIJ9KiH-kEYnE#scrollTo=2WpXEjQS9UBY)
 
 ⚠️ **Important:** Please **make a copy first**  
 Before editing, go to `File > Save a copy in Drive` to create your own version. This ensures the original notebook stays unchanged.
